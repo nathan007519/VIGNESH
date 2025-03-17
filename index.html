@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Developer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    body {
+      font-family: 'Press Start 2P', cursive;
+    }
+    .cut-top {
+      position: relative;
+      background-color: #2d3748;
+      padding: 2rem;
+      margin-top: 2rem;
+      animation: slideInUp 1s ease-out;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .cut-top::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: #2d3748;
+      clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    }
+    .cut-top:hover {
+      transform: translateY(-10px);
+      background-color: #4a5568;
+    }
+    @keyframes slideInUp {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .fade-in {
+      animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .hover-effect {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .hover-effect:hover {
+      transform: translateY(-10px);
+      background-color: #4a5568;
+    }
+    .hidden-list {
+      display: none;
+      margin-top: 10px;
+    }
+    .cut-top:hover .hidden-list, 
+    .hover-effect:hover .hidden-list {
+      display: block;
+      animation: fadeIn 0.5s ease-in;
+    }
+    /* New Hover Effect for Skills List */
+    .skill-item {
+      transition: transform 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+    .skill-item:hover {
+      transform: translateX(8px);
+      color: #48bb78; /* Green */
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white flex flex-col min-h-screen">
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-800 shadow-md p-4 flex justify-between items-center fade-in">
+    <div class="text-xl font-bold">MY PAGE</div>
+    <div class="space-x-4">
+      <a class="text-gray-300 hover:text-green-400" href="#">HOME</a>
+      <a class="text-gray-300 hover:text-green-400" href="#">ABOUT</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mx-auto mt-10 p-4 flex-grow fade-in">
+    <div class="flex flex-col items-center md:flex-row md:items-start md:space-x-8">
+      <div class="w-32 h-32 bg-gray-700 mb-4 md:mb-0">
+        <img alt="Profile picture placeholder" class="w-full h-full object-cover" height="128" src="/VIGNESH.jpg" width="128"/>
+      </div>
+      <div class="text-center md:text-left">
+        <h1 class="text-2xl font-bold">VIGNESH</h1>
+        <p class="text-lg">
+            I'm <span class="text-green-400 input"></span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Sections -->
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Skills Section with Hover Effect -->
+      <div class="cut-top text-center md:col-span-1">
+        <h2 class="font-bold">SKILLS</h2>
+        <ul class="hidden-list text-sm">
+          <li class="skill-item">🔹 Unreal Engine</li>
+          <li class="skill-item">🔹 Unity</li>
+          <li class="skill-item">🔹 C++ / C#</li>
+          <li class="skill-item">🔹 Game Design</li>
+          <li class="skill-item">🔹 Level Design</li>
+          <li class="skill-item">🔹 HTML</li>
+          <li class="skill-item">🔹 TailwindCSS</li>
+          <li class="skill-item">🔹 JavaScript</li>
+          <li class="skill-item">🔹 Java</li>
+          <li class="skill-item">🔹 Python</li>
+          <li class="skill-item">🔹 PHP</li>
+          <li class="skill-item">🔹 ReactJS</li>
+          <li class="skill-item">🔹 Ruby</li>
+          <li class="skill-item">🔹 3D Modelling</li>
+        </ul>
+      </div>
+
+      <!-- Experience Section with No Experience Message -->
+      <div class="bg-gray-800 p-4 shadow-md text-center fade-in hover-effect md:col-span-1">
+        <h2 class="font-bold">EXPERIENCE</h2>
+        <p class="hidden-list text-sm">No Experience Yet</p>
+      </div>
+
+      <!-- Contact Section with Details -->
+      <div class="bg-gray-800 p-4 shadow-md text-center fade-in hover-effect md:col-span-1">
+        <h2 class="font-bold">CONTACT</h2>
+        <ul class="hidden-list text-sm">
+          <li>📞 Phone: <a href="tel:+916381120305" class="text-blue-400 hover:underline">+91 6381120305</a></li>
+          <li>📷 Instagram: <a href="https://www.instagram.com/frostkingnate?igsh=MXdwYjVsZXJqZHAzcA==" class="text-blue-400 hover:underline">@frostkingnate</a></li>
+          <li>💻 GitHub: <a href="https://github.com/nathan00757" class="text-blue-400 hover:underline">nathan00757</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+   <!-- Typed.js Script -->
+  <script>
+    var typed = new Typed('.input', {
+      strings: ["Game Developer!", "Web Developer!", "Image Editor!", "Video Editor!", "VFX Artist!", "Story Writter"],
+      typeSpeed: 100,
+      backSpeed: 100,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|',
+    });
+  </script>
+</body>
+</html>
